@@ -87,14 +87,14 @@ services:
       retries: 5
     restart: always
     extra_hosts:
-      - "db:69.234.220.146"
+      - "db:172.31.19.222"
 
   airflow-scheduler:
     <<: *airflow-common
     command: scheduler
     restart: always
     extra_hosts:
-      - "db:69.234.220.146"
+      - "db:172.31.19.222"
 
   airflow-init:
     <<: *airflow-common
@@ -106,7 +106,7 @@ services:
       _AIRFLOW_WWW_USER_USERNAME: ${_AIRFLOW_WWW_USER_USERNAME:-airflow}
       _AIRFLOW_WWW_USER_PASSWORD: ${_AIRFLOW_WWW_USER_PASSWORD:-airflow}
     extra_hosts:
-      - "db:69.234.220.146"
+      - "db:172.31.19.222"
 
 # volumes:
 #   postgres-db-volume:
